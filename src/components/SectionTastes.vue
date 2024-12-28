@@ -1,10 +1,7 @@
 <template>
 
     <NavbarSection />
-
-    <div class="slice">
-        <CheckSecction />
-    </div>
+    <CheckSecction />
 </template>
 
 <script>
