@@ -5,14 +5,14 @@
         <p>Made with love by</p>
         <p><a href="#">My github</a></p>
     </div>
-    <div><p>All rights reserved</p></div>
+    <div><p>© 2024 - JacksonFlorez</p></div>
     </div>
 
     <div class="footer-mobile">
         <div class="footer-left-mobile">
             <p>Made with love by <a href="#">My github</a></p>
         </div>
-        <div><p>All rights reserved</p></div>
+        <div><p>© 2024 - JacksonFlorez</p></div>
     </div>
 </footer>
 </template>

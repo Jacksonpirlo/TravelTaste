@@ -1,4 +1,5 @@
 <template>
+  <div v-if="main">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -46,9 +47,19 @@
     </div>
 
     <div class="container-main">
-      <div><p>Search by your tastes </p></div>
+      <div><p v-on:click="tastesSecction()">Search by your tastes </p></div>
       <span>  </span>
       <div><p>Touristic places </p></div>
+    </div>
+
+  </div>
+    
+
+
+    <div>
+      <div v-if="SectionTastes">
+        <SectionTastes />
+      </div>
     </div>
 
     <AppFooter />
@@ -56,13 +67,28 @@
 
 <script>
 
-import AppFooter from "./components/AppFooter.vue";
+  import AppFooter from "./components/AppFooter.vue";
+  import SectionTastes from "./components/SectionTastes.vue";
 
 export default {
   name: 'App',
   components: {
-    AppFooter
-  }
+    AppFooter,
+    SectionTastes
+  },
+
+  data() {
+    return {
+      main: true,
+    }
+  },
+
+  methods: {
+      tastesSecction() {
+        this.SectionTastes = !this.SectionTastes;
+        this.main = false;
+      }
+}
 }
 
 </script>
@@ -92,7 +118,7 @@ body {
   font-size: 1rem;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   font-family: "Ysabeau SC", serif;
   font-optical-sizing: auto;
   text-decoration: underline;
