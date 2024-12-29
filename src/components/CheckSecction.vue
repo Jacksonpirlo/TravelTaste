@@ -114,7 +114,7 @@ export default {
     overflow: hidden;
     position: relative;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     }
 
     .carousel-wrapper {
@@ -126,7 +126,7 @@ export default {
     .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: fit-content; 
+    width:fit-content;
     }
 
 
@@ -147,7 +147,7 @@ export default {
     padding: 10px;
     z-index: 10;
     user-select: none;
-        width: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,13 +160,33 @@ export default {
         display: flex;
         flex-direction: column;
         padding: 5px;
+        flex-direction: row;
+            /* flex-wrap: wrap; */
+            justify-content: space-between;
     }
     .theme-slide label {
         padding: 5px;
+        width: 100%;
+            text-align: left;
+    }
+
+    .check-selected {
+        margin-top: 50px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        color: #333;
+    }
+
+    .check-selected p {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: bold;
     }
 
     /* .theme-slide label:hover {
-       color: #0026a3;
+        color: #0026a3;
     } */
 
 </style>
