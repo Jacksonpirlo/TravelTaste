@@ -47,9 +47,9 @@
     </div>
 
     <div class="container-main">
-      <div><p v-on:click="tastesSecction()">Search by your tastes </p></div>
-      <span>  </span>
-      <div><p>Touristic places </p></div>
+      <div class="pointerclass"><p v-on:click="tastesSecction()">Search by your tastes </p></div>
+      <span></span>
+      <div class="pointerclass"><p>Touristic places </p></div>
     </div>
 
   </div>
@@ -132,5 +132,9 @@ height: 60px;
 width: 2px;
 margin-left: 20px;
 margin-right: 20px;
+}
+
+.pointerclass {
+  cursor: pointer;
 }
 </style>
