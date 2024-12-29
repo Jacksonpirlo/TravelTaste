@@ -170,6 +170,11 @@ export default {
             text-align: left;
     }
 
+    .theme-slide input {
+        width: 20px;
+        height: 20px;
+    }
+
     .check-selected {
         margin-top: 50px;
         padding: 10px;

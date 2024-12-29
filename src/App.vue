@@ -47,9 +47,9 @@
     </div>
 
     <div class="container-main">
-      <div class="pointerclass"><p v-on:click="tastesSecction()">Search by your tastes </p></div>
+      <div class="pointerclass"><p v-on:click="tastesSecction()">Search by your tastes </p> </div>
       <span></span>
-      <div class="pointerclass"><p>Touristic places </p></div>
+      <div class="pointerclass"><p @click="TastesRdd()">Touristic places </p></div>
     </div>
 
   </div>
@@ -62,6 +62,12 @@
       </div>
     </div>
 
+    <div>
+      <div v-if="TastesRd">
+        <TastesRd />
+      </div>
+    </div>
+
     <AppFooter />
 </template>
 
@@ -69,12 +75,14 @@
 
   import AppFooter from "./components/AppFooter.vue";
   import SectionTastes from "./components/SectionTastes.vue";
+  import TastesRd from "./components/TastesRd.vue";
 
 export default {
   name: 'App',
   components: {
     AppFooter,
-    SectionTastes
+    SectionTastes,
+    TastesRd
   },
 
   data() {
@@ -86,6 +94,11 @@ export default {
   methods: {
       tastesSecction() {
         this.SectionTastes = !this.SectionTastes;
+        this.main = false;
+      },
+
+      TastesRdd() {
+        this.TastesRd = !this.TastesRd;
         this.main = false;
       }
 }

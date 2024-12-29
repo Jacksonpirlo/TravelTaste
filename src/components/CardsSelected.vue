@@ -4,9 +4,9 @@
         <div class="card" style="width: 15rem;">
     <img src="../img/carousel-theme1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a @click="moreInfo()" class="btn btn-dark">Go somewhere</a>
+        <h5 class="card-title">Eliminar</h5>
+        <p class="card-text">Una vez creado en Backend</p>
+        <a @click="moreInfo()" class="btn btn-dark">More Information</a>
     </div>
 </div>
 
@@ -22,7 +22,7 @@
             <div class="info-item">
                 <div class="country cube">
                     <h4>País</h4>
-                    <p>Descripción breve del país.</p>
+                    <p>Venezuela</p>
                 </div>
 
                 <div class="price-travel cube">
@@ -33,20 +33,10 @@
 
                 <div class="hoteles cube">
                     <h4>Hoteles cercanos</h4>
-                <p>Hotel 1: $150/noche</p>
-                <p>Hotel 2: $120/noche</p>
+                <p>El dorado: $150/noche</p>
+                <p>Thama: $120/noche</p>
                 </div>
             </div>
-            <!-- <div class="info-item">
-                <h4>Costo de viaje</h4>
-                <p>Avión: $500</p>
-                <p>Bus: $100</p>
-            </div>
-            <div class="info-item">
-                <h4>Hoteles cercanos</h4>
-                <p>Hotel 1: $150/noche</p>
-                <p>Hotel 2: $120/noche</p>
-            </div> -->
         </div>
         <a @click="closed" class="btn btn-dark">Cerrar</a>
     </div>
