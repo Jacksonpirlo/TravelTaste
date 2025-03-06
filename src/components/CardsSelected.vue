@@ -22,7 +22,7 @@
             <div class="info-item">
                 <div class="country cube">
                     <h4>País</h4>
-                    <p>Venezuela</p>
+                    <p v-for="user in users" :key="user.id">{{ user.name }}</p>
                 </div>
 
                 <div class="price-travel cube">
@@ -44,16 +44,34 @@
 </template>
 
 <script>
+
+import axios from 'axios'
 export default {
     name: 'CardsSelected',
     data() {
         return {
             moreInformation: false,
-            cards: true
+            cards: true,
+            users: []
         }
     },
 
+    mounted() {
+    this.crearUsuarios(); // Llamada a la función para obtener los datos
+  },
+
     methods: {
+
+        async crearUsuarios() {
+            try {
+                const response = await axios.get('http://localhost:3009/api/users')
+                console.log('Respuesta de axios:', response);
+                this.users = response.data.users
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
         moreInfo() {
             this.moreInformation = true
             this.cards = false
