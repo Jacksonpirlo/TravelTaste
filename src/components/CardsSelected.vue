@@ -4,7 +4,7 @@
         <div class="card" style="width: 15rem;">
     <img src="../img/carousel-theme1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Eliminar</h5>
+        <h5 class="card-title" v-for="countryJ in country" :key="countryJ.id"> {{ countryJ.countryName }} </h5>
         <p class="card-text">Una vez creado en Backend</p>
         <a @click="moreInfo()" class="btn btn-dark">More Information</a>
     </div>
@@ -22,7 +22,7 @@
             <div class="info-item">
                 <div class="country cube">
                     <h4>País</h4>
-                    <p v-for="user in users" :key="user.id">{{ user.name }}</p>
+                    <p v-for="countries in country" :key="countries.countryID">{{ countries.countryName }}</p>
                 </div>
 
                 <div class="price-travel cube">
@@ -52,21 +52,31 @@ export default {
         return {
             moreInformation: false,
             cards: true,
-            users: []
+            country: []
         }
     },
 
     mounted() {
-    this.crearUsuarios(); // Llamada a la función para obtener los datos
+    this.namePlace(); // Llamada a la función para obtener los datos
   },
 
     methods: {
 
-        async crearUsuarios() {
+        async namePlace() {
             try {
-                const response = await axios.get('http://localhost:3009/api/users')
+                const response = await axios.get('http://localhost:3009/countries')
                 console.log('Respuesta de axios:', response);
-                this.users = response.data.users
+                this.country = response.data.countries
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
+        async price() {
+            try {
+                const response = await axios.get('http://localhost:3009/countries')
+                console.log('Respuesta de axios:', response);
+                this.country = response.data.countries
             } catch (error) {
                 console.log(error)
             }
