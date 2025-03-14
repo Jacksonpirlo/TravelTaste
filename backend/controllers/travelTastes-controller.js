@@ -13,6 +13,52 @@ const getAllCountries = (req, res) => {
     })
 }
 
+// Obtener por ID
+
+const getCountryByIdCountry = (req, res) => {
+    const countryID  = req.params.id;
+    db.get('SELECT * FROM country WHERE countryID = ?', [countryID], (err, row) => {
+        if (err) {
+            return res.status(500).json({error: err.message});
+        } else {
+            return res.json({country: row});
+        }
+    })
+}
+
+const getIDByIdPlace = (req, res) => {
+    const placeID  = req.params.id;
+    db.get('SELECT * FROM places WHERE placeID = ?', [placeID], (err, row) => {
+        if (err) {
+            return res.status(500).json({error: err.message});
+        } else {
+            return res.json({place: row});
+        }
+    })
+}
+
+
+const getIDByIdRestaurant = (req, res) => {
+    const restaurantID  = req.params.id;
+    db.get('SELECT * FROM country WHERE restaurantID = ?', [restaurantID], (err, row) => {
+        if (err) {
+            return res.status(500).json({error: err.message});
+        } else {
+            return res.json({Restaurant: row});
+        }
+    })
+}
+
+const getIDByIdHotels = (req, res) => {
+    const hotelID  = req.params.id;
+    db.get('SELECT * FROM country WHERE hotelID = ?', [hotelID], (err, row) => {
+        if (err) {
+            return res.status(500).json({error: err.message});
+        } else {
+            return res.json({Hotel: row});
+        }
+    })
+}
 // Obtener todos los hoteles
 
 const getAllHotels = (req, res) => {
@@ -49,4 +95,4 @@ const getAllPlaces = (req, res) => {
     })
 }
 
-module.exports = {getAllCountries, getAllHotels, getAllRestaurants, getAllPlaces};
+module.exports = {getAllCountries, getAllHotels, getAllRestaurants, getAllPlaces, getCountryByIdCountry, getIDByIdPlace, getIDByIdRestaurant, getIDByIdHotels};

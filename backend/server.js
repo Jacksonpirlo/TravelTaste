@@ -15,6 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', travelRoutes);
 // app.get('/', (req, res) => { res.send('Hello World!') });
 
-app.listen(3009, () => {
-    console.log('Server is running on port 3009');
+app.listen(3001, () => {
+    console.log('Server is running on port 3001');
 });

@@ -5,9 +5,9 @@
         <div class="card" style="width: 15rem;">
     <img src="../img/carousel-theme1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a @click="moreInfo()" class="btn btn-dark">Go somewhere</a>
+        <h5 class="card-title" v-for="place in places" :key="place.countryID"> {{ place.placeName }}</h5>
+        <p class="card-text" v-for="place in places" :key="place.countryID"> {{ place.description }} </p>
+        <a @click="moreInfo()" class="btn btn-dark">More</a>
     </div>
 </div>
 
@@ -70,10 +70,34 @@
 
 <script>
 import NavbarSection from './NavbarSecction.vue';
+import axios from 'axios';
     export default {
         name: 'TastesRd',
         components: {
             NavbarSection,
+        },
+
+        data() {
+            return {
+                places: []
+            }
+        },
+
+        mounted() {
+    this.namePlace(); // Llamada a la función para obtener los datos
+    },
+
+
+        methods: {
+            async namePlace() {
+                try {
+                    const res = await axios.get('http://localhost:3001/places/1');
+                    console.log(res);
+                    this.places = res.data.place;
+                } catch (error) {
+                    console.log(error);
+                }
+            }
         }
     }
 </script>
